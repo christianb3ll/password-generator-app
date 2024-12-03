@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <script src="./assets/js/common.js" defer></script>
+  
+  <title>Password generator app</title>
+</head>
+<body>
+
+  
+  <main>
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+
+    <div class="password-block block">
+      <input id="password" class="password" type="text" placeholder="P4$5W0rD!" />
+      <div class="copy">
+        <p id="copy-text" class="copy-text hidden">COPIED</p>
+        <button class="copy-btn" onclick="CopyToClipboard()"></button>
+      </div>
+    </div>
+    
+    <div class="form-block block">
+      <form>
+        <div class="length-block">
+          <div class="length-header">
+            <label for="range">Character Length</label>
+            <p id="length-count" class="length-count">10</p>
+          </div>
+          <input id="range" name="range" type="range" min="6" max="20" value="10">
+        </div>
+
+        <div class="checkbox-block">
+          <div class="checkbox-container">
+            <label for="upperccase">Include Uppercase Letters</label>
+            <input type="checkbox" id="uppercase" name="uppercase" value="uppercase" />
+          </div>
+          <div class="checkbox-container">
+            <label for="lowercase">Include Lowercase Letters</label>
+            <input type="checkbox" id="lowercase" name="lowercase" value="lowercase" />
+          </div>
+          
+          <div class="checkbox-container">
+            <label for="numbers">Include Numbers</label>
+            <input type="checkbox" id="numbers" name="numbers" value="numbers" />
+          </div>
+          
+          <div class="checkbox-container">
+            <label for="symbols">Include Symbols</label>
+            <input type="checkbox" id="symbols" name="symbols" value="symbols" />
+          </div>
+        </div>
+
+        <div class="strength-block">
+          <div>
+            <p class="strength-label">Strength</p>
+          </div>
+          <div class="strength-status">
+            <p id="strength-level" class="strength-level"></p> 
+            <div id="strength-indicator" class="strength-indicator">
+              <span class=""></span>
+              <span class=""></span>
+              <span class=""></span>
+              <span class=""></span>
+            </div>
+          </div>
+        </div>
+
+        <button class="button" type="button" id="generate-buton" onclick={GeneratePassword()} >Generate <img class="icon-arrow" src="assets/images/icon-arrow-right.svg" alt=""></button>
+      </form>
+
+    </div>
+    
+  </main>
+
+  <footer>
+
+  </footer>
+
+</body>
+</html>
